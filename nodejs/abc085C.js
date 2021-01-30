@@ -9,11 +9,9 @@ function Main(input) {
 
   for (let i = 0; i <= N; i++) {
     for (let j = 0; j <= N - i; j++) {
-      for (let k = 0; k <= N - (i + j); k++) {
-        if (i + j + k === N && yukichi * i + higuchi * j + noguchi * k === Y) {
-          console.log(`${i} ${j} ${k}`);
-          return;
-        }
+      if (yukichi * i + higuchi * j + noguchi * (N - i - j) === Y) {
+        console.log(`${i} ${j} ${N - i - j}`);
+        return;
       }
     }
   }
